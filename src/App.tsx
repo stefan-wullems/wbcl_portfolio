@@ -1,6 +1,5 @@
 import * as React from "react";
-import LandingImageContainer from "./components/LandingImageContainer";
-
+import LandingImageContainer from "./components/LandingImage/LandingImageContainer";
 class App extends React.Component {
   public render() {
     return (
