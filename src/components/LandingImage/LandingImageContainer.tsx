@@ -10,7 +10,8 @@ class LandingImageContainer extends React.Component {
       <div
         style={{
           backgroundImage: `url(${Background})`,
-          objectFit: "fill",
+          backgroundSize: "100vw 100vh",
+          backgroundRepeat: "no-repeat",
           height: "100vh",
           width: "100vw",
           margin: 0

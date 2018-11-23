@@ -20,7 +20,7 @@ class NavBarContainer extends React.Component {
                 lineHeight: "11.5vh",
                 textAlign: "center",
                 fontFamily: "raleway",
-                fontSize: "60px",
+                fontSize: "80px",
                 color: "#690f2a"
               }}
             >
