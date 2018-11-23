@@ -7,7 +7,7 @@ class NavBarContainer extends React.Component {
       <div
         style={{
           width: "100vw",
-          height: "23vh"
+          height: "12.5vh"
         }}
       >
         <Grid container>
@@ -15,9 +15,9 @@ class NavBarContainer extends React.Component {
           <Grid item xs={4}>
             <h1
               style={{
-                marginTop: "11.5vh",
-                height: "23vh",
-                lineHeight: "11.5vh",
+                marginTop: "12.5vh",
+                height: "12.5vh",
+                lineHeight: "12.5vh",
                 textAlign: "center",
                 fontFamily: "raleway",
                 fontSize: "80px",

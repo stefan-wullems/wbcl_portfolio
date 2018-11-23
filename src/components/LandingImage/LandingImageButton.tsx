@@ -7,7 +7,7 @@ const styles = {
     width: "12vw",
     marginLeft: "44vw",
     marginRight: "44vw",
-    height: "5.5vh",
+    height: "6.25vh",
     backgroundColor: "none",
     color: "#690f2a",
     fontSize: "16px",
