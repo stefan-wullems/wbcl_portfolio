@@ -1,10 +1,9 @@
 import * as React from "react";
-import { Grid, Button } from "@material-ui/core";
 import Background from "./Screenshot-from-2018-11-23-13-44-29.png";
 import NavBarContainer from "../AppBar/AppBarContainer";
-import LandingImageButton from "./LandingImageButton";
+import HomeNavButton from "./HomeNavButton";
 
-class LandingImageContainer extends React.Component {
+class HomeContainer extends React.Component {
   render() {
     return (
       <div
@@ -19,12 +18,12 @@ class LandingImageContainer extends React.Component {
       >
         <NavBarContainer />
 
-        <LandingImageButton marginTop="28.125vh" text="about me" />
-        <LandingImageButton marginTop="6.25vh" text="my work" />
-        <LandingImageButton marginTop="6.25vh" text="contact" />
+        <HomeNavButton marginTop="28.125vh" text="about me" />
+        <HomeNavButton marginTop="6.25vh" text="my work" />
+        <HomeNavButton marginTop="6.25vh" text="contact" />
       </div>
     );
   }
 }
 
-export default LandingImageContainer;
+export default HomeContainer;
