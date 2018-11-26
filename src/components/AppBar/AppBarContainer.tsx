@@ -1,37 +1,54 @@
 import * as React from "react";
 import { Grid } from "@material-ui/core";
+import AppBarButton from "./AppBarButton";
 
-class NavBarContainer extends React.Component {
+interface IProps {
+  page: Page;
+}
+
+class AppBarContainer extends React.Component<IProps> {
   render() {
     return (
-      <div
+      <Grid
+        container
         style={{
           width: "100vw",
-          height: "12.5vh"
+          height: "8vh",
+          backgroundColor: "#c6ccd7"
         }}
       >
-        <Grid container>
-          <Grid item xs={4} />
-          <Grid item xs={4}>
-            <h1
-              style={{
-                marginTop: "12.5vh",
-                height: "12.5vh",
-                lineHeight: "12.5vh",
-                textAlign: "center",
-                fontFamily: "raleway",
-                fontSize: "80px",
-                color: "#690f2a"
-              }}
-            >
-              Stefan Wullems
-            </h1>
-          </Grid>
-          <Grid item xs={4} />
+        <Grid item xs={1}>
+          <AppBarButton text={"home"} to="/" />
         </Grid>
-      </div>
+        <Grid item xs={2} />
+        <Grid item xs={6}>
+          <h1
+            style={{
+              textAlign: "center",
+              fontFamily: "raleway",
+              fontSize: 30,
+              fontWeight: 700,
+              color: "#690f2a"
+            }}
+          >
+            {this.props.page}
+          </h1>
+        </Grid>
+        {["about", "experience", "contact"].map(page => {
+          return (
+            <Grid item xs={1} key={page}>
+              {this.props.page === `${page}` && (
+                <AppBarButton text={`${page}`} />
+              )}
+              {this.props.page !== `${page}` && (
+                <AppBarButton text={`${page}`} to={`/${page}`} />
+              )}
+            </Grid>
+          );
+        })}
+      </Grid>
     );
   }
 }
 
-export default NavBarContainer;
+export default AppBarContainer;
