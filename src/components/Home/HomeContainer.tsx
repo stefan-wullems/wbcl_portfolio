@@ -1,27 +1,41 @@
 import * as React from "react";
+
 import Background from "./Screenshot-from-2018-11-23-13-44-29.png";
-import NavBarContainer from "../AppBar/AppBarContainer";
-import HomeNavButton from "./HomeNavButton";
+import { withWidth } from "@material-ui/core";
+import toRenderProps from "recompose/toRenderProps";
+
+import Title from "./Title";
+import NavButtons from "./NavButtons";
+
+const WithWidth = toRenderProps(withWidth());
 
 class HomeContainer extends React.Component {
   render() {
     return (
-      <div
-        style={{
-          backgroundImage: `url(${Background})`,
-          backgroundSize: "100vw 100vh",
-          backgroundRepeat: "no-repeat",
-          height: "100vh",
-          width: "100vw",
-          margin: 0
-        }}
-      >
-        <NavBarContainer />
+      <WithWidth>
+        {({ widthStr }) => {
+          const width: IWidth = {
+            sm: widthStr === "sm",
+            xs: widthStr === "xs"
+          };
 
-        <HomeNavButton marginTop="28.125vh" text="about me" />
-        <HomeNavButton marginTop="6.25vh" text="my work" />
-        <HomeNavButton marginTop="6.25vh" text="contact" />
-      </div>
+          return (
+            <div
+              style={{
+                backgroundImage: `url(${Background})`,
+                backgroundSize: "100vw 100vh",
+                backgroundRepeat: "no-repeat",
+                height: "100vh",
+                width: "100vw",
+                margin: 0
+              }}
+            >
+              <Title width={width} />
+              <NavButtons width={width} />
+            </div>
+          );
+        }}
+      </WithWidth>
     );
   }
 }
