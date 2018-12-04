@@ -16,12 +16,12 @@ const styles = {
     height: "8vh",
     width: "100%",
     borderRadius: 0,
-    color: "#690f2a",
+    color: "#ffffff",
     fontSize: 14,
     fontWeight: 700,
     "&:hover": {
-      backgroundColor: "#690f2a",
-      color: "#c6ccd7"
+      color: "#cccccc",
+      background: "#24292e"
     }
   },
   link: {
