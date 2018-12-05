@@ -14,7 +14,7 @@ class AppBarContainer extends React.Component<IProps> {
         style={{
           width: "100vw",
           height: "8vh",
-          backgroundColor: "#c6ccd7"
+          backgroundColor: "#24292e"
         }}
       >
         <Grid item xs={1}>
@@ -28,7 +28,7 @@ class AppBarContainer extends React.Component<IProps> {
               fontFamily: "raleway",
               fontSize: 30,
               fontWeight: 700,
-              color: "#690f2a"
+              color: "#ffffff"
             }}
           >
             {this.props.page}
