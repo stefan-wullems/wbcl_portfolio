@@ -6,6 +6,7 @@ import ContactForm from "./ContactForm";
 
 import { Route } from "react-router-dom";
 import SuccessfullySentMessagePage from "./SuccessfullySentMessagePage";
+import UnsuccessfullySentMessagePage from "./UnsuccessfullySentMessagePage";
 
 class ContactContainer extends React.Component<RouteComponentProps> {
   render() {
@@ -16,6 +17,10 @@ class ContactContainer extends React.Component<RouteComponentProps> {
         <Route
           path="/contact/successful"
           component={SuccessfullySentMessagePage}
+        />
+        <Route
+          path="/contact/unsuccessful"
+          component={UnsuccessfullySentMessagePage}
         />
       </React.Fragment>
     );

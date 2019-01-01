@@ -28,11 +28,7 @@ const ContactForm: React.FC = props => {
         value="kfxqg6t730w1xf14zidw22hn"
       />
       <input type="hidden" name="success_url" value="/contact/successful" />
-      <input
-        type="hidden"
-        name="error_url"
-        value=".?message=Email+could+not+be+sent.&isError=1"
-      />
+      <input type="hidden" name="error_url" value="/contact/unsuccessful" />
       <input type="submit" />
     </form>
   );
