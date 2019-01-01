@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import { ContactFormFields } from "./ContactContainer";
 interface IProps {
   onChange: (field: ContactFormFields, value: string) => void;
   message: string;
@@ -7,8 +7,6 @@ interface IProps {
   email: string;
   companyName: string;
 }
-
-type ContactFormFields = "message" | "name" | "email" | "companyName";
 
 const ContactForm: React.FC<IProps> = props => {
   return (
