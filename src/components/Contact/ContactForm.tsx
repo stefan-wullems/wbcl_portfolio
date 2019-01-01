@@ -1,7 +1,9 @@
 import * as React from "react";
 import { ContactFormFields } from "./ContactContainer";
+import ContactField from "./ContactField";
 interface IProps {
   onChange: (field: ContactFormFields, value: string) => void;
+  onSubmit: (e: React.FormEvent<HTMLInputElement>) => void;
   message: string;
   name: string;
   email: string;
@@ -10,26 +12,36 @@ interface IProps {
 
 const ContactForm: React.FC<IProps> = props => {
   return (
-    <div>
-      <input
-        type="text"
-        onChange={e => props.onChange("name", e.target.value)}
+    <form>
+      <ContactField
+        label="Name: "
+        onChange={props.onChange}
+        value={props.name}
+        field="name"
       />
-      <input
-        type="text"
-        onChange={e => props.onChange("email", e.target.value)}
+      <ContactField
+        label="Email: "
+        onChange={props.onChange}
+        value={props.email}
+        field="email"
       />
-      <input
-        type="text"
-        onChange={e => props.onChange("companyName", e.target.value)}
+      <ContactField
+        label="Company Name: "
+        onChange={props.onChange}
+        value={props.companyName}
+        field="companyName"
       />
-      <textarea
-        rows={4}
-        cols={50}
-        onChange={e => props.onChange("message", e.target.value)}
-        value={props.message}
-      />
-    </div>
+      <label>
+        Message:
+        <textarea
+          rows={4}
+          cols={50}
+          onChange={e => props.onChange("message", e.target.value)}
+          value={props.message}
+        />
+      </label>
+      <input type="submit" onClick={props.onSubmit} />
+    </form>
   );
 };
 

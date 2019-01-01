@@ -27,6 +27,10 @@ class ContactContainer extends React.Component<RouteComponentProps, IState> {
     this.setState(copy);
   }
 
+  handleContactFormSubmit(e: React.FormEvent<HTMLInputElement>) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -34,6 +38,7 @@ class ContactContainer extends React.Component<RouteComponentProps, IState> {
         <ContactForm
           {...this.state}
           onChange={this.handleContactFormChange.bind(this)}
+          onSubmit={this.handleContactFormSubmit.bind(this)}
         />
       </React.Fragment>
     );
