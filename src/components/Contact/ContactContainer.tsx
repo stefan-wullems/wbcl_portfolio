@@ -14,6 +14,12 @@ interface IState {
 export type ContactFormFields = "message" | "name" | "email" | "companyName";
 
 class ContactContainer extends React.Component<RouteComponentProps, IState> {
+  constructor(props) {
+    super(props);
+
+    this.handleContactFormChange = this.handleContactFormChange.bind(this);
+    this.handleContactFormSubmit = this.handleContactFormSubmit.bind(this);
+  }
   readonly state: IState = {
     message: "",
     name: "",
@@ -27,8 +33,19 @@ class ContactContainer extends React.Component<RouteComponentProps, IState> {
     this.setState(copy);
   }
 
-  handleContactFormSubmit(e: React.FormEvent<HTMLInputElement>) {
+  handleContactFormSubmit(e: React.FormEvent<HTMLInputElement>): void {
     e.preventDefault();
+    console.log(this.state);
+    this.resetState();
+  }
+
+  resetState(): void {
+    this.setState({
+      message: "",
+      name: "",
+      email: "",
+      companyName: ""
+    });
   }
 
   render() {

@@ -3,7 +3,7 @@ import { ContactFormFields } from "./ContactContainer";
 import ContactField from "./ContactField";
 interface IProps {
   onChange: (field: ContactFormFields, value: string) => void;
-  onSubmit: (e: React.FormEvent<HTMLInputElement>) => void;
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   message: string;
   name: string;
   email: string;
@@ -12,7 +12,7 @@ interface IProps {
 
 const ContactForm: React.FC<IProps> = props => {
   return (
-    <form>
+    <form onSubmit={props.onSubmit}>
       <ContactField
         label="Name: "
         onChange={props.onChange}
@@ -40,7 +40,7 @@ const ContactForm: React.FC<IProps> = props => {
           value={props.message}
         />
       </label>
-      <input type="submit" onClick={props.onSubmit} />
+      <input type="submit" />
     </form>
   );
 };
